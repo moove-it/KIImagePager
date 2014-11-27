@@ -19,7 +19,8 @@ typedef NS_ENUM(NSUInteger, MIImagePagerIndicatorPostion) {
 @protocol KIImagePagerDataSource <NSObject>
 
 @required
-- (NSArray *) arrayWithImages:(KIImagePager*)pager;
+- (NSInteger) numberOfImagesFor:(KIImagePager*)pager;
+- (void) imagePager:(KIImagePager*)pager imageForIndex:(NSInteger)index onImageView:(UIImageView*)imageView;
 - (UIViewContentMode) contentModeForImage:(NSUInteger)image inPager:(KIImagePager*)pager;
 
 @optional
